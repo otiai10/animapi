@@ -21,7 +21,8 @@ func NewSyobocalClient() SyobocalHTTPClient {
 	}
 }
 
-func (c SyobocalHTTPClient) FindAfter(criteria time.Time) TitleLookupResponse {
+func (c SyobocalHTTPClient) FindAfter(dur time.Duration) TitleLookupResponse {
+
 	resp, _ := http.Get(c.BaseURL)
 	bodyBytes, _ := ioutil.ReadAll(resp.Body)
 

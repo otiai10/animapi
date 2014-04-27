@@ -11,10 +11,9 @@ import "time"
 func TestFindAfter(t *testing.T) {
 	Describe(t, "FindAfter", func() {
 		It("should find animes after param time", func() {
-			dur, _ := time.ParseDuration("-24h")
-			criteriaTime := time.Now().Add(dur)
 			client := syobocal.NewSyobocalClient()
-			_ = client.FindAfter(criteriaTime)
+			dur, _ := time.ParseDuration("-24h")
+			_ = client.FindAfter(dur)
 			// response := client.FindAfter(criteriaTime)
 			// fmt.Printf("%+v", response)
 		})
